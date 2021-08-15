@@ -1,0 +1,29 @@
+.catsnav.navbar {
+    min-Width: 560px !important;
+    background-color: #7B435B !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    height: 55vh !important;
+    overflow-y: scroll !important;
+    border-radius: 0 !important;
+}
+
+
+.catsnav {
+    &.navbar {
+        min-Width: 560px !important;
+        background-color: #7B435B !important;
+
+        &.navbar-expand-lg {
+            .navbar-nav {
+                .dropdown-menu {
+                    height: 55vh !important;
+                    overflow-y: scroll !important;
+                    border-radius: 0 !important;
+                }
+            } 
+        }
+    }
+}
+

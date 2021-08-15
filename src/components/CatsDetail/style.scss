@@ -1,0 +1,17 @@
+.catsdetail {
+    &.card  {
+        height: 50vh;   
+        border: none;
+        box-shadow: 1px 2px 8px rgba(0,0,0,0.2);
+
+        img {
+            object-fit: cover !important;
+            height: 50vh;
+        }
+
+        .title {
+            font-size: 24px;
+        }
+        
+    }
+}

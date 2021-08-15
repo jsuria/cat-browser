@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Navibar from './components/Navibar'
+import CatsListing from './components/CatsListing'
+import CatsDetail from './components/CatsDetail'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navibar />
+        <Switch>
+          <Route exact path="/detail/:breed_name" component={CatsDetail} />
+          <Route exact path="/filter/:breed_id" component={CatsListing} />
+          <Route exact path="/" component={CatsListing} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
