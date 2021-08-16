@@ -44,7 +44,6 @@ class CatsDetail extends React.Component {
             this.setState({ catImageUrl });
         })
         .catch(error => {
-            //alert("We are down for maintenance at the moment. Please try again later!")
             const catImageUrl = {
                 url: "/cat_white.png"
             };
