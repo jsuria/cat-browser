@@ -112,7 +112,7 @@ class CatsListing extends React.Component {
             </div>
             <Container 
                 fluid 
-                className={`d-flex flex-wrap justify-content-center ${resultCount < 9 ? 'compressed' : ''}`}
+                className={`d-flex flex-wrap justify-content-center ${resultCount < 10 ? 'compressed' : ''}`}
                 id="listing-container"
             >    
                 {
@@ -125,11 +125,11 @@ class CatsListing extends React.Component {
                                 backgroundImage: `url(${this.processImage(cat)})`
                             }}> 
 
-                            <Card.ImgOverlay className={!catBreedId ? "overlay" : "d-none"}>
+                            <Card.ImgOverlay className="overlay">
                                 <Card.Title className="title">
-                                    {cat.breeds ? cat.breeds[0].name : cat.name}
+                                    {cat.breeds ? "View details" : cat.name}
                                 </Card.Title>
-                                <Card.Subtitle className="mb-4 mb-lg-5">{cat.breeds ? cat.breeds[0].origin : cat.origin}</Card.Subtitle>
+                                <Card.Subtitle className={cat.breeds ? "d-none" : "mb-4 mb-lg-5"}>{cat.origin}</Card.Subtitle>
 
                             </Card.ImgOverlay>                            
                         </Card>

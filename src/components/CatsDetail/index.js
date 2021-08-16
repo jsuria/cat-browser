@@ -79,12 +79,12 @@ class CatsDetail extends React.Component {
                                     </Col>
                                     <Col className="col-12 col-lg-6 detail-bg">
                                         <Card.Body className="pb-5 mb-5 bg-transparent">
-                                            <Card.Title className="title text-start mt-2 mt-lg-5">
-                                                Breed Name: {catDetail.name}
-                                            </Card.Title>
+                                            <Card.Subtitle className="text-start my-4 mt-lg-5">
+                                                <b>Breed Name:</b> {catDetail.name}
+                                            </Card.Subtitle>
                                             <Card.Subtitle className="text-start mb-4 mb-lg-5"><b>Origin:</b> {catDetail.origin}</Card.Subtitle>
                                             <Card.Text className="text-start">
-                                                {catDetail.description}
+                                                <b>Description:</b> {catDetail.description}
                                             </Card.Text>
                                             <Card.Text className="text-start">
                                                 <b>Temperament:</b> {catDetail.temperament}
