@@ -17,7 +17,7 @@ function App() {
         <Navibar />
         <Switch>
           <Route exact path="/detail/:breed_name" component={CatsDetail} />
-          <Route exact path="/filter/:breed_id" component={CatsListing} />
+          <Route exact path="/filter/:breed_id/:breed_name" component={CatsListing} />
           <Route exact path="/" component={CatsListing} />
         </Switch>
       </div>

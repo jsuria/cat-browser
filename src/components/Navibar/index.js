@@ -7,14 +7,10 @@ import Container from 'react-bootstrap/Container'
 import axios from 'axios'
 
 import {
-  Link
-} from "react-router-dom"
-
-import {
   withRouter
 } from "react-router"
 
-import './style.css'
+import './style.scss'
 
 class Navibar extends React.Component {
 
@@ -46,12 +42,15 @@ class Navibar extends React.Component {
             >
             <Container fluid>
               
-              <Link className="navbar-brand" to="/">Cats Browser!</Link>
+              <Navbar.Brand className="navbar-brand" href="/">
+                  <h3>OMG Cats!</h3> 
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-              <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-center">
+              <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                 
-                <Nav fill>
+                <Nav>
                   <NavDropdown 
+                    align="end"
                     title="Choose a Breed" 
                     id="collasible-nav-dropdown"
                     >
@@ -59,7 +58,7 @@ class Navibar extends React.Component {
                             this.state.breeds.map((breed, index) => 
                               <NavDropdown.Item
                                 key={index} 
-                                href={`/filter/${encodeURI(breed.id)}`}>
+                                href={`/filter/${encodeURI(breed.id)}/${encodeURI(breed.name)}`}>
                                   {breed.name}
                               </NavDropdown.Item>
                             )

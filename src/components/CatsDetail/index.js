@@ -44,7 +44,11 @@ class CatsDetail extends React.Component {
             this.setState({ catImageUrl });
         })
         .catch(error => {
-            alert("We are down for maintenance at the moment. Please try again later!")
+            //alert("We are down for maintenance at the moment. Please try again later!")
+            const catImageUrl = {
+                url: "/cat_white.png"
+            };
+            this.setState({ catImageUrl})
             console.log("Status: ", error.response.status, "Details: ", error.response.data)
         })
     }
@@ -56,29 +60,44 @@ class CatsDetail extends React.Component {
 
     render() {
 
-        let imageUrl = this.state.catImageUrl.url ?? "./cat_white.png"
+        let imageUrl = this.state.catImageUrl.url ?? "/cat_white.png"
 
         return (
+            <>
+            <div className="d-block p-3 w-100 listing-header">
+                <h3>
+                {
+                    this.catBreed
+                }
+                </h3>
+            </div>
             <Container
                 className="d-flex flex-wrap justify-content-center container-lg h-100">
                     {
                         this.state.catDetail.map((catDetail, index) => 
-                            <Card className="my-5 catsdetail"
+                            <Card className="my-5 catsdetail rounded"
                                   key={index}
                             >  
                                 <Row className="g-0">
-                                    <Col className="col-12 col-sm-6">
-                                        <Image src={imageUrl} className="w-100 rounded-start float-start" />
+                                    <Col className="col-12 col-lg-6">
+                                        <Image src={imageUrl} className="img-fluid float-start" />
                                     </Col>
-                                    <Col className="col-12 col-sm-6">
-                                        <Card.Body>
-                                            <Card.Title className="title text-start mt-5">
-                                                {catDetail.name}
+                                    <Col className="col-12 col-lg-6 detail-bg">
+                                        <Card.Body className="pb-5 mb-5 bg-transparent">
+                                            <Card.Title className="title text-start mt-2 mt-lg-5">
+                                                Breed Name: {catDetail.name}
                                             </Card.Title>
-                                            <Card.Subtitle className="text-start mb-5">{catDetail.origin}</Card.Subtitle>
+                                            <Card.Subtitle className="text-start mb-4 mb-lg-5"><b>Origin:</b> {catDetail.origin}</Card.Subtitle>
                                             <Card.Text className="text-start">
                                                 {catDetail.description}
                                             </Card.Text>
+                                            <Card.Text className="text-start">
+                                                <b>Temperament:</b> {catDetail.temperament}
+                                            </Card.Text>
+                                            <Card.Text className="text-start">
+                                                <b>Life Span:</b> {catDetail.life_span} years
+                                            </Card.Text>
+                                    
                                         </Card.Body>
                                     </Col>
                                 </Row>
@@ -86,6 +105,7 @@ class CatsDetail extends React.Component {
                         )
                      }
             </Container>
+            </>
         )
     }
 }

@@ -1,19 +1,7 @@
-.catsnav.navbar {
-    min-Width: 560px !important;
-    background-color: #7B435B !important;
-}
-
-.navbar-expand-lg .navbar-nav .dropdown-menu {
-    height: 55vh !important;
-    overflow-y: scroll !important;
-    border-radius: 0 !important;
-}
-
-
 .catsnav {
     &.navbar {
-        min-Width: 560px !important;
-        background-color: #7B435B !important;
+        background-color: #ff479d !important;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
 
         &.navbar-expand-lg {
             .navbar-nav {
@@ -24,6 +12,12 @@
                 }
             } 
         }
+    }
+
+    .navbar-brand h3 {
+        font-family: Montserrat, sans-serif;
+        font-weight: bold;
+        font-size: 36px;
     }
 }
 
