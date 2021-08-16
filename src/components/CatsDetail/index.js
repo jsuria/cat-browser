@@ -65,11 +65,7 @@ class CatsDetail extends React.Component {
         return (
             <>
             <div className="d-block p-3 w-100 listing-header">
-                <h3>
-                {
-                    this.catBreed
-                }
-                </h3>
+                <h3>{this.catBreed}</h3>
             </div>
             <Container
                 className="d-flex flex-wrap justify-content-center container-lg h-100">
