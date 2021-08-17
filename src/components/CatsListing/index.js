@@ -126,7 +126,7 @@ class CatsListing extends React.Component {
                             }}> 
 
                             <Card.ImgOverlay className="overlay">
-                                <Card.Title className="title">
+                                <Card.Title className={cat.breeds ? "title filter" : "title"}>
                                     {cat.breeds ? "View details" : cat.name}
                                 </Card.Title>
                                 <Card.Subtitle className={cat.breeds ? "d-none" : "mb-4 mb-lg-5"}>{cat.origin}</Card.Subtitle>

@@ -3,7 +3,6 @@ import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import Image from 'react-bootstrap/Image'
 import Container from 'react-bootstrap/Container'
 
 import {
@@ -67,17 +66,22 @@ class CatsDetail extends React.Component {
                 <h3>{this.catBreed}</h3>
             </div>
             <Container
-                className="d-flex flex-wrap justify-content-center container-lg h-100">
+                fluid
+                className="d-flex flex-wrap h-100 p-0">
                     {
                         this.state.catDetail.map((catDetail, index) => 
-                            <Card className="my-5 catsdetail rounded"
+                            <Card className="catsdetail rounded flex-fill"
                                   key={index}
                             >  
                                 <Row className="g-0">
-                                    <Col className="col-12 col-lg-6">
-                                        <Image src={imageUrl} className="img-fluid float-start" />
+                                    <Col className="col-12 col-lg-6 h-100" style={{
+                                        backgroundImage: `url(${imageUrl})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
+                                        backgroundRepeat: "no-repeat"
+                                    }}>
                                     </Col>
-                                    <Col className="col-12 col-lg-6 detail-bg">
+                                    <Col className="col-12 col-lg-6 detail-bg mb-5 mb-lg-0">
                                         <Card.Body className="pb-5 mb-5 bg-transparent">
                                             <Card.Subtitle className="text-start my-4 mt-lg-5">
                                                 <b>Breed Name:</b> {catDetail.name}

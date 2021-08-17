@@ -41,8 +41,12 @@
         .title {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 35%;
+            margin-top: 25%;
             text-align: center;
+
+            &.filter {
+                margin-top: 35%;
+            }
         }
     }
 }
