@@ -74,11 +74,8 @@ class CatsDetail extends React.Component {
                                   key={index}
                             >  
                                 <Row className="g-0">
-                                    <Col className="col-12 col-lg-6 h-100" style={{
-                                        backgroundImage: `url(${imageUrl})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                        backgroundRepeat: "no-repeat"
+                                    <Col className="col-12 col-lg-6 h-100 image-bg" style={{
+                                        backgroundImage: `url(${imageUrl})`
                                     }}>
                                     </Col>
                                     <Col className="col-12 col-lg-6 detail-bg mb-5 mb-lg-0">

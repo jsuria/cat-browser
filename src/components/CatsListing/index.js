@@ -112,12 +112,12 @@ class CatsListing extends React.Component {
             </div>
             <Container 
                 fluid 
-                className={`d-flex flex-wrap justify-content-center ${resultCount < 10 ? 'compressed' : ''}`}
+                className={`d-flex flex-wrap flex-fill p-0 ${resultCount < 10 ? 'compressed' : ''}`}
                 id="listing-container"
             >    
                 {
                     this.state.cats.map((cat, index) => 
-                        <Card className="col-12 col-md-4 col-lg-3 col-xl-2 m-1 bg-dark text-white catslisting"
+                        <Card className="col-12 col-md-4 col-lg-3 col-xl-2 bg-dark flex-fill text-white catslisting"
                             onClick={() => this.loadDetail(`/detail/${encodeURI(cat.breeds ? cat.breeds[0].name : cat.name)}`)}
                             key={index}     
                             id={`card-item-${index}`}

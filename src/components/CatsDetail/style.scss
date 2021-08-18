@@ -9,11 +9,10 @@ body {
 .catsdetail {
     &.card  {
         border: none;
-        //box-shadow: 1px 2px 8px rgba(0,0,0,0.2);
 
         img {
             object-fit: cover !important;
-            object-position: center !important;
+            //object-position: center !important;
             background-color: grey;
         }
 
@@ -21,16 +20,35 @@ body {
             font-size: 24px;
         }
 
+        .image-bg {
+            background-size: cover;
+            //background-position: center;
+            background-repeat: no-repeat;
+            height: 80vh;
+
+            @media only screen and (max-width: 576px) {
+                background-position: center
+            }
+        }
+
         .detail-bg {
             background-color: #EDD3C4;
+            height: 100vh;
+
+            @media only screen and (max-width: 991px) {
+                height: unset;
+            }
         }
     }
 }
-
+/* 
 // ANIMATIONS
 .catsdetail.card {
+    -webkit-animation: fadeInAnimation ease 3s;
     animation: fadeInAnimation ease 3s;
+    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+    -webkit-animation-fill-mode:forwards;
     animation-fill-mode: forwards;
 }
 
@@ -42,3 +60,15 @@ body {
         opacity: 1;
      }
 }
+
+.catsdetail.card .image-bg {
+    -webkit-animation: zoomOutAnimation 10s ease-in infinite;
+    animation: zoomOutAnimation 10s ease-in infinite;
+    transition: all .5s ease-in-out;
+}
+
+@keyframes zoomOutAnimation {
+    0% {transform: scale(1);}
+    50% {transform: scale(0.67);}
+    100% {transform: scale(1);}
+} */
